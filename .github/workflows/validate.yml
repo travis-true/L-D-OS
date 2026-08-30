@@ -1,0 +1,42 @@
+name: Validate L&D OS
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          package-manager-cache: false
+      - name: Verify generated examples
+        run: |
+          node scripts/generate_examples.mjs
+          git diff --exit-code -- examples/intake/
+      - name: Validate controlled core
+        run: python3 scripts/validate_core.py
+      - name: Validate website and configuration
+        run: python3 scripts/validate_site.py
+      - name: Test intake logic
+        run: |
+          node --check assets/js/app.js
+          node --check assets/js/system.js
+          node --test tests/*.test.mjs

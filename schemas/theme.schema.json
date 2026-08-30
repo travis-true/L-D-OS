@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/theme.schema.json",
+  "title": "Organization theme profile",
+  "type": "object",
+  "required": ["profile_id", "organization", "typography", "colors", "rules", "accessibility", "output"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "profile_id": {"type": "string"},
+    "organization": {"type": "object", "required": ["name", "short_name"]},
+    "typography": {"type": "object", "required": ["heading_font", "body_font", "fallback_fonts"]},
+    "colors": {"type": "object", "required": ["primary", "secondary", "accent", "body_text", "background", "on_primary_text"]},
+    "rules": {"type": "object", "required": ["heading_case", "logo", "restricted_color_uses"]},
+    "accessibility": {"type": "object", "required": ["target", "non_web_guidance", "manual_review_required"]},
+    "output": {"type": "object", "required": ["file_naming_pattern", "default_classification", "delivery_channels"]}
+  }
+}

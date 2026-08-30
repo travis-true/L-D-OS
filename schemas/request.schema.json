@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/request.schema.json",
+  "title": "Training and enablement request",
+  "type": "object",
+  "required": ["request_id", "title", "requester", "requested_date", "business_need", "audience", "desired_outcome", "timing", "constraints", "status"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "request_id": {"type": "string", "pattern": "^REQ-[A-Z0-9-]{3,40}$"},
+    "title": {"type": "string", "minLength": 5},
+    "requester": {"type": "string"},
+    "requested_date": {"type": "string", "format": "date"},
+    "business_need": {"type": "string", "minLength": 10},
+    "evidence_of_need": {"type": "array", "items": {"type": "string"}},
+    "consequence_if_unaddressed": {"type": "string"},
+    "audience": {
+      "type": "object",
+      "required": ["description", "estimated_reach", "current_proficiency", "constraints"],
+      "properties": {
+        "description": {"type": "string"},
+        "estimated_reach": {"type": "integer", "minimum": 1},
+        "current_proficiency": {"type": "string"},
+        "constraints": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "desired_outcome": {"type": "string"},
+    "requested_output": {"type": "string"},
+    "timing": {"type": "object", "required": ["needed_by", "flexibility"], "properties": {"needed_by": {"type": "string"}, "flexibility": {"type": "string"}}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "existing_materials": {"type": "array", "items": {"type": "string"}},
+    "stakeholders": {"type": "array", "items": {"type": "string"}},
+    "classification": {"type": "string", "default": "not-verified"},
+    "status": {"type": "string", "enum": ["submitted", "needs-information", "accepted", "redirected", "deferred", "rejected"]}
+  }
+}

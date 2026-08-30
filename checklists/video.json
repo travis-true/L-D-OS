@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/checklist.schema.json",
+  "checklist_id": "CHK-VIDEO-001",
+  "asset_type": "video",
+  "version": "0.1.0",
+  "categories": [
+    {"name": "content", "items": [
+      {"check_id": "VID-C01", "requirement": "The video covers one coherent task or topic and uses a source-verified script or outline.", "blocking_if_failed": true},
+      {"check_id": "VID-C02", "requirement": "The demonstrated environment and interface are current, permitted, and training-safe.", "blocking_if_failed": true}
+    ]},
+    {"name": "media", "items": [
+      {"check_id": "VID-M01", "requirement": "The complete final file was played and checked for audio, timing, synchronization, legibility, crop, and export defects.", "blocking_if_failed": true},
+      {"check_id": "VID-M02", "requirement": "On-screen text, callouts, terminology, and visual style follow the approved profile.", "blocking_if_failed": false}
+    ]},
+    {"name": "accessibility", "items": [
+      {"check_id": "VID-A01", "requirement": "Captions were reviewed for accuracy after final upload or packaging.", "blocking_if_failed": true},
+      {"check_id": "VID-A02", "requirement": "A transcript and descriptions or equivalent access are provided when required; visual-only actions are explained.", "blocking_if_failed": true}
+    ]},
+    {"name": "release", "items": [
+      {"check_id": "VID-R01", "requirement": "Rights, permissions, privacy, metadata, thumbnail, destination, owner, support, and review trigger are verified.", "blocking_if_failed": true}
+    ]}
+  ]
+}

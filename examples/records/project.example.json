@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/project.schema.json",
+  "project_id": "PRJ-DEMO-001",
+  "request_id": "REQ-DEMO-001",
+  "title": "Example system search job aid",
+  "lane": "standard",
+  "risk": "low",
+  "classification": "example",
+  "current_state": "triage",
+  "owner": "Example project owner",
+  "roles": [
+    {"role": "executor", "actor": "Example builder", "authority_status": "assigned"},
+    {"role": "independent reviewer", "actor": "Example reviewer", "authority_status": "assigned"},
+    {"role": "release authority", "actor": "Example authority", "authority_status": "not-verified"}
+  ],
+  "applicable_gates": ["G00", "G01", "G02", "G03", "G04", "G05", "G06", "G08", "G09", "G10", "G11"],
+  "conditional_controls": ["G07 if an automated renderer is used"],
+  "excluded_controls": [],
+  "evidence": [],
+  "created_date": "2026-08-30",
+  "review_date": "DECISION REQUIRED",
+  "version": "0.1.0"
+}

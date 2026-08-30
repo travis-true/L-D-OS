@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/gate-decision.schema.json",
+  "decision_id": "DEC-DEMO-G00-001",
+  "project_id": "PRJ-DEMO-001",
+  "gate_id": "G00",
+  "candidate_or_baseline": "TEOS core 0.1.0 and project record 0.1.0",
+  "result": "AUTHORIZED_WITH_CONDITIONS",
+  "rationale": "Example record only; operational authority is not established.",
+  "evidence_ids": [],
+  "conditions": ["Assign a verified release authority before G09."],
+  "authority": "Example authority",
+  "authority_status": "not-verified",
+  "decision_date": "2026-08-30",
+  "next_state": "triage"
+}

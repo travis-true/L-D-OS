@@ -1,0 +1,33 @@
+name: Controlled change request
+description: Propose a change to a governed TEOS component.
+title: "[Change]: "
+labels: ["change-control"]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component and version
+      description: Identify the workflow, schema, decision table, checklist, or profile.
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason and evidence
+      description: Explain the problem, evidence, and expected benefit.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact analysis
+      description: Note affected records, integrations, controls, users, and migration needs.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance and rollback criteria
+      description: Define how the change will be tested, accepted, and reversed if needed.
+    validations:
+      required: true

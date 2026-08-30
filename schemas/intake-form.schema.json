@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/intake-form.schema.json",
+  "title": "L&D OS web intake configuration",
+  "type": "object",
+  "required": ["config_id", "version", "repository", "issue_url", "issue_body_url_limit", "storage_key", "steps"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "config_id": {"type": "string", "pattern": "^LDOS-INTAKE-[0-9]{3}$"},
+    "version": {"type": "string"},
+    "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
+    "issue_url": {"type": "string"},
+    "issue_body_url_limit": {"type": "integer", "minimum": 1000},
+    "storage_key": {"type": "string"},
+    "steps": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "description", "fields"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"},
+          "title": {"type": "string", "minLength": 1},
+          "description": {"type": "string", "minLength": 1},
+          "summary": {"type": "boolean"},
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "type"],
+              "properties": {
+                "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"},
+                "label": {"type": "string", "minLength": 1},
+                "type": {"type": "string", "enum": ["text", "number", "url", "date", "textarea", "textarea-lines", "select", "checkbox", "checkboxes", "repeatable"]},
+                "required": {"type": "boolean"},
+                "options": {"type": "array"},
+                "fields": {"type": "array"},
+                "showWhen": {"type": "object"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

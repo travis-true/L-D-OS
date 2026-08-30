@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The workflows, operating lanes, decision gates, schemas, and pilot guidance behind the L&D Operating System.">
+  <meta name="theme-color" content="#075985">
+  <title>L&amp;D Operating System | System guide</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="module" src="assets/js/system.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="site-name" href="index.html" aria-label="L and D Operating System home">
+        <span class="site-mark" aria-hidden="true">L&amp;D</span>
+        <span>Operating System</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Start an intake</a>
+        <a aria-current="page" href="system.html">Explore the system</a>
+        <a href="https://github.com/travis-true/L-D-OS">View on GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero hero-compact">
+      <div class="shell">
+        <p class="eyebrow">Operating model</p>
+        <h1>How the system governs L&amp;D work</h1>
+        <p class="hero-lede">A practical seven-stage workflow supported by three operating lanes and thirteen explicit decision gates.</p>
+        <a class="button button-primary" href="index.html">Start an intake</a>
+      </div>
+    </section>
+
+    <div class="shell system-content">
+      <nav class="section-nav" aria-label="On this page">
+        <a href="#principles">Principles</a>
+        <a href="#workflows">Workflows</a>
+        <a href="#lanes">Lanes</a>
+        <a href="#gates">Gates</a>
+        <a href="#schemas">Schemas</a>
+        <a href="#pilot">Pilot</a>
+      </nav>
+
+      <section id="principles" class="content-section">
+        <p class="eyebrow">Governance</p>
+        <h2>Core principles</h2>
+        <div class="card-grid card-grid-3">
+          <article class="info-card"><h3>Diagnose first</h3><p>Requester preferences are evidence, not the final solution decision. Determine whether training is appropriate before building it.</p></article>
+          <article class="info-card"><h3>Ground every decision</h3><p>Use approved sources and distinguish facts, assumptions, inferences, conflicts, gaps, and decisions required.</p></article>
+          <article class="info-card"><h3>Keep authority human</h3><p>Automation may draft, classify, compare, and recommend. It may not approve gates, waive controls, accept risk, or authorize release.</p></article>
+          <article class="info-card"><h3>Separate QA and release</h3><p>A quality disposition describes evidence. A named human authority decides whether the exact candidate may be released.</p></article>
+          <article class="info-card"><h3>Verify publication</h3><p>Publishing is complete only when the authorized asset is retrieved through the intended audience path.</p></article>
+          <article class="info-card"><h3>Maintain ownership</h3><p>Every operational asset has an owner, review trigger, measurement plan, and lifecycle disposition.</p></article>
+        </div>
+      </section>
+
+      <section id="workflows" class="content-section">
+        <p class="eyebrow">Seven-stage surface</p>
+        <h2>Workflows</h2>
+        <div class="timeline" id="workflow-list">
+          <article><span>1</span><div><h3>Intake</h3><p>Authorize scope, capture the need, and select the operating lane.</p></div></article>
+          <article><span>2</span><div><h3>Brief</h3><p>Govern sources, diagnose causes, recommend the smallest effective intervention, and approve design.</p></div></article>
+          <article><span>3</span><div><h3>Build</h3><p>Authorize specifications, create versioned candidates, and preserve traceability.</p></div></article>
+          <article><span>4</span><div><h3>Review</h3><p>Freeze the candidate, perform independent QA, record findings, and retest repairs.</p></div></article>
+          <article><span>5</span><div><h3>Publish</h3><p>Obtain human release authorization and verify retrieval through the intended channel.</p></div></article>
+          <article><span>6</span><div><h3>Measure</h3><p>Collect approved performance and business evidence without treating completion as transfer.</p></div></article>
+          <article><span>7</span><div><h3>Maintain</h3><p>Review sources and outcomes, control changes, and continue, revise, replace, or retire.</p></div></article>
+        </div>
+        <p><a href="docs/operator-guide.md">Read the operator guide</a> · <a href="docs/architecture.md">Read the architecture</a></p>
+      </section>
+
+      <section id="lanes" class="content-section">
+        <p class="eyebrow">Proportional control</p>
+        <h2>Operating lanes</h2>
+        <p>Lanes change record depth and workflow compression—not mandatory authority or safety controls.</p>
+        <div id="lane-cards" class="card-grid card-grid-3" aria-live="polite"></div>
+      </section>
+
+      <section id="gates" class="content-section">
+        <p class="eyebrow">Explicit decisions</p>
+        <h2>Decision gates</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>Thirteen L&amp;D OS gates and their governing decisions</caption>
+            <thead><tr><th scope="col">Gate</th><th scope="col">Stage</th><th scope="col">Decision</th><th scope="col">Human authority</th></tr></thead>
+            <tbody id="gate-rows"></tbody>
+          </table>
+        </div>
+        <p id="system-load-status" role="status" aria-live="polite">Loading governed decision data…</p>
+      </section>
+
+      <section id="schemas" class="content-section">
+        <p class="eyebrow">Machine-readable records</p>
+        <h2>Schemas and controlled data</h2>
+        <div class="link-grid">
+          <a href="schemas/request.schema.json"><strong>Request</strong><span>Intake identity, need, audience, timing, and status</span></a>
+          <a href="schemas/project.schema.json"><strong>Project</strong><span>Lane, risk, roles, gates, evidence, and state</span></a>
+          <a href="schemas/source.schema.json"><strong>Source</strong><span>Authority, version, use restrictions, conflicts, and gaps</span></a>
+          <a href="schemas/diagnosis.schema.json"><strong>Diagnosis</strong><span>Facts, assumptions, causes, and training-fit analysis</span></a>
+          <a href="schemas/design.schema.json"><strong>Design</strong><span>Outcomes, format rationale, practice, assessment, and evaluation</span></a>
+          <a href="schemas/gate-decision.schema.json"><strong>Gate decision</strong><span>Evidence, conditions, authority, and timestamp</span></a>
+          <a href="schemas/release.schema.json"><strong>Release</strong><span>Candidate fingerprint, QA disposition, authorization, and channel</span></a>
+          <a href="schemas/lifecycle-review.schema.json"><strong>Lifecycle review</strong><span>Measures, currency, findings, owner, and disposition</span></a>
+        </div>
+        <p><a href="https://github.com/travis-true/L-D-OS/tree/main/schemas">View all schemas on GitHub</a></p>
+      </section>
+
+      <section id="pilot" class="content-section pilot-callout">
+        <div>
+          <p class="eyebrow">Controlled adoption</p>
+          <h2>Pilot before scaling</h2>
+          <p>Test one low-risk revision, one standard new asset, and one controlled or intentionally stopped scenario. Confirm traceability, cycle time, operator effort, retrieval, defect escape, and lifecycle ownership.</p>
+        </div>
+        <a class="button button-secondary" href="docs/pilot-plan.md">Open the pilot guide</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <p>© 2026 Travis True. Code licensed under <a href="LICENSE">MIT</a>; documentation and L&amp;D OS content licensed under <a href="LICENSE-CONTENT.md">CC BY 4.0</a>.</p>
+      <p><a href="https://github.com/travis-true">GitHub profile</a> · <a href="https://github.com/travis-true/L-D-OS/issues">Repository issues</a></p>
+    </div>
+  </footer>
+</body>
+</html>

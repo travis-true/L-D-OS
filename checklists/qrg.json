@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemas/checklist.schema.json",
+  "checklist_id": "CHK-QRG-001",
+  "asset_type": "qrg",
+  "version": "0.1.0",
+  "categories": [
+    {"name": "content", "items": [
+      {"check_id": "QRG-C01", "requirement": "The asset supports one coherent task or moment of need.", "blocking_if_failed": true},
+      {"check_id": "QRG-C02", "requirement": "Steps and claims trace to current approved sources.", "blocking_if_failed": true},
+      {"check_id": "QRG-C03", "requirement": "Only task-relevant context is included; exceptions and escalation are preserved.", "blocking_if_failed": true}
+    ]},
+    {"name": "writing", "items": [
+      {"check_id": "QRG-W01", "requirement": "Instructions use plain language, active voice, and one observable action per step where sequence matters.", "blocking_if_failed": false},
+      {"check_id": "QRG-W02", "requirement": "Terminology matches approved sources and unavoidable terms are defined.", "blocking_if_failed": true}
+    ]},
+    {"name": "accessibility", "items": [
+      {"check_id": "QRG-A01", "requirement": "Semantic headings, lists, tables, links, language, reading order, and alternatives are verified in the final format.", "blocking_if_failed": true},
+      {"check_id": "QRG-A02", "requirement": "Meaning does not rely on color, position, or images alone; contrast meets the approved target.", "blocking_if_failed": true}
+    ]},
+    {"name": "release", "items": [
+      {"check_id": "QRG-R01", "requirement": "Filename, version, classification, taxonomy, owner, support, destination, and review trigger are recorded.", "blocking_if_failed": true},
+      {"check_id": "QRG-R02", "requirement": "The final candidate was independently inspected and retrieved through the intended user path.", "blocking_if_failed": true}
+    ]}
+  ]
+}

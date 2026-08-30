@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/diagnosis.schema.json",
+  "title": "Performance diagnosis",
+  "type": "object",
+  "required": ["diagnosis_id", "project_id", "problem_statement", "desired_performance", "current_performance", "facts", "assumptions", "cause_categories", "training_fit", "recommendation", "status"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "diagnosis_id": {"type": "string", "pattern": "^DIA-[A-Z0-9-]{3,40}$"},
+    "project_id": {"type": "string"},
+    "problem_statement": {"type": "string"},
+    "desired_performance": {"type": "string"},
+    "current_performance": {"type": "string"},
+    "facts": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "cause_categories": {"type": "array", "items": {"type": "string", "enum": ["knowledge-skill", "information", "process", "system-tool", "resources-capacity", "motivation-incentive", "management-reinforcement", "environment", "unknown"]}},
+    "training_fit": {"type": "string", "enum": ["primary", "supporting", "not-recommended", "not-verified"]},
+    "recommendation": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "evidence_ids": {"type": "array", "items": {"type": "string"}},
+    "status": {"type": "string", "enum": ["draft", "reviewed", "approved", "approved-with-conditions", "returned", "not-approved"]}
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/render-job.schema.json",
+  "title": "Renderer adapter job",
+  "type": "object",
+  "required": ["job_id", "adapter_id", "adapter_version", "asset_id", "candidate_version", "theme_profile", "content_spec", "outputs", "classification", "authorized_by", "authorization_status"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "job_id": {"type": "string", "pattern": "^JOB-[A-Z0-9-]{3,40}$"},
+    "adapter_id": {"type": "string"},
+    "adapter_version": {"type": "string"},
+    "asset_id": {"type": "string"},
+    "candidate_version": {"type": "string"},
+    "theme_profile": {"type": "string"},
+    "content_spec": {"type": "string"},
+    "outputs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "classification": {"type": "string"},
+    "authorized_by": {"type": "string"},
+    "authorization_status": {"type": "string", "enum": ["verified", "not-verified"]}
+  }
+}

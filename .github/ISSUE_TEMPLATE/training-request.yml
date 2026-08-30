@@ -1,0 +1,48 @@
+name: Training or enablement request
+description: Start a governed request using the TEOS intake contract.
+title: "[Request]: "
+labels: ["intake"]
+body:
+  - type: input
+    id: sponsor
+    attributes:
+      label: Sponsor
+      description: Accountable business sponsor or decision owner.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Performance need
+      description: Describe the observable gap, affected audience, and business impact.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Available evidence and sources
+      description: List authoritative sources, data, SMEs, constraints, and known assumptions.
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Initial risk
+      options:
+        - Low
+        - Moderate
+        - High or regulated
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Requested need-by date
+      placeholder: YYYY-MM-DD
+  - type: textarea
+    id: success
+    attributes:
+      label: Intended performance and success evidence
+      description: What should people do differently, and how will the change be observed?
+    validations:
+      required: true

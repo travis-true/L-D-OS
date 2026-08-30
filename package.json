@@ -1,0 +1,13 @@
+{
+  "name": "ld-os",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "generate:examples": "node scripts/generate_examples.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

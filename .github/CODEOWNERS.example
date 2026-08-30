@@ -1,0 +1,6 @@
+# Copy to .github/CODEOWNERS after replacing the example teams.
+* @your-org/learning-operations
+/schemas/ @your-org/learning-operations @your-org/platform-governance
+/decisions/ @your-org/learning-governance
+/.github/workflows/ @your-org/platform-governance
+/profiles/ @your-org/brand-accessibility

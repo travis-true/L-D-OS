@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/format-routing.schema.json",
+  "catalog_id": "TEOS-FORMAT-001",
+  "version": "0.1.0",
+  "dimensions": [
+    {"id": "moment", "question": "When is support needed?", "values": ["before", "during", "after-error", "multiple"]},
+    {"id": "memory", "question": "Must performance be recalled or can it be referenced?", "values": ["recall", "reference", "both"]},
+    {"id": "frequency", "question": "How often is the task performed?", "values": ["high", "moderate", "low", "one-time"]},
+    {"id": "criticality", "question": "What is the consequence of error?", "values": ["low", "moderate", "high", "critical"]},
+    {"id": "skill_type", "question": "What type of performance is required?", "values": ["knowledge", "procedural", "decision", "interpersonal", "mixed"]},
+    {"id": "shelf_life", "question": "How volatile is the content?", "values": ["high-change", "moderate-change", "stable"]},
+    {"id": "reach", "question": "How broad is the audience?", "values": ["individual", "team", "department", "enterprise", "external"]}
+  ],
+  "options": [
+    {"format": "qrg", "best_fit": ["reference", "during", "procedural", "high-change"], "caution": "Add practice or another intervention when high criticality requires reliable recall or judgment."},
+    {"format": "video", "best_fit": ["procedural", "before", "after-error", "single task"], "caution": "UI volatility increases maintenance cost; provide an accessible equivalent."},
+    {"format": "vilt", "best_fit": ["interpersonal", "decision", "high criticality", "practice with feedback"], "caution": "A slide presentation without practice is not sufficient evidence of skill development."},
+    {"format": "elearning", "best_fit": ["recall", "broad reach", "stable", "practice and assessment"], "caution": "Do not use completion alone as proof of transfer."},
+    {"format": "performance-support-system", "best_fit": ["reference", "complex workflow", "multiple moments", "high frequency"], "caution": "May require process or technology change rather than training."},
+    {"format": "non-training-intervention", "best_fit": ["motivation", "resources", "process", "system", "management", "incentive cause"], "caution": "Document why training is not the primary solution."}
+  ],
+  "decision_rule": "The designer records all dimensions, selects the smallest effective option, explains conflicting signals, and obtains G04 approval. The matrix recommends; it does not authorize."
+}

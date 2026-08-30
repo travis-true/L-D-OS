@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/checklist.schema.json",
+  "checklist_id": "CHK-VILT-001",
+  "asset_type": "vilt",
+  "version": "0.1.0",
+  "categories": [
+    {"name": "design", "items": [
+      {"check_id": "VIL-D01", "requirement": "Observable outcomes, agenda, timing, practice, feedback, assessment, and facilitator guidance align.", "blocking_if_failed": true},
+      {"check_id": "VIL-D02", "requirement": "Content was verified against current approved sources.", "blocking_if_failed": true}
+    ]},
+    {"name": "materials", "items": [
+      {"check_id": "VIL-M01", "requirement": "Slides, facilitator guide, participant materials, activities, and pre-work are version-aligned.", "blocking_if_failed": true},
+      {"check_id": "VIL-M02", "requirement": "Materials follow the approved profile and terminology.", "blocking_if_failed": false}
+    ]},
+    {"name": "accessibility", "items": [
+      {"check_id": "VIL-A01", "requirement": "Accessible materials are available in advance; live captions and multiple participation routes are planned.", "blocking_if_failed": true},
+      {"check_id": "VIL-A02", "requirement": "Platform keyboard, focus, audio, caption, recording, and support behavior is verified as applicable.", "blocking_if_failed": true}
+    ]},
+    {"name": "operations", "items": [
+      {"check_id": "VIL-O01", "requirement": "Facilitator readiness, logistics, support, recording permissions, storage, evaluation, and review trigger are recorded.", "blocking_if_failed": true}
+    ]}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "registry_id": "TEOS-STANDARDS-001",
+  "version": "0.1.0",
+  "selection_rule": "Select standards during design based on audience, risk, intervention, platform, and organizational policy. A reference framework does not become governing until the implementing authority approves it.",
+  "standards": [
+    {"id": "STD-ADDIE", "name": "ADDIE", "use": "lifecycle completeness lens", "status": "reference-lens", "verification": "organization approval required"},
+    {"id": "STD-SAM", "name": "Successive Approximation Model", "use": "iterative prototyping lens", "status": "reference-lens", "verification": "organization approval required"},
+    {"id": "STD-MAGER", "name": "Mager performance objectives", "use": "observable outcome structure", "status": "reference-lens", "verification": "organization approval required"},
+    {"id": "STD-BLOOM", "name": "Revised Bloom taxonomy", "use": "cognitive-demand alignment", "status": "reference-lens", "verification": "organization approval required"},
+    {"id": "STD-LTEM", "name": "Learning-Transfer Evaluation Model", "use": "evaluation evidence-level lens", "status": "reference-lens", "verification": "primary source and organization approval required"},
+    {"id": "STD-VISUAL", "name": "Contrast, repetition, alignment, and proximity", "use": "visual hierarchy review lens", "status": "reference-lens", "verification": "organization approval required"},
+    {"id": "STD-UDL-3", "name": "CAST UDL Guidelines 3.0", "use": "design-for-variability lens", "status": "official-source-verified", "source": "https://udlguidelines.cast.org/", "verification": "applicability and organization approval required"},
+    {"id": "STD-WCAG-22", "name": "WCAG 2.2", "use": "web accessibility conformance target when adopted", "status": "official-source-verified", "source": "https://www.w3.org/WAI/standards-guidelines/wcag/", "verification": "specific target and scope must be approved"},
+    {"id": "STD-WCAG2ICT", "name": "WCAG2ICT", "use": "guidance for applying WCAG to non-web documents and software", "status": "official-source-verified", "source": "https://www.w3.org/WAI/standards-guidelines/wcag/non-web-ict/", "verification": "applicability and organization approval required"},
+    {"id": "STD-SCORM", "name": "SCORM", "use": "LMS package interoperability when required", "status": "conditional", "verification": "target LMS and approved version must be tested"},
+    {"id": "STD-XAPI", "name": "xAPI", "use": "learning-experience statements when an approved LRS and vocabulary exist", "status": "conditional", "verification": "architecture, privacy, vocabulary, and reporting approval required"}
+  ]
+}

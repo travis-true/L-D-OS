@@ -1,0 +1,47 @@
+{
+  "$schema": "../schemas/lane-catalog.schema.json",
+  "catalog_id": "TEOS-LANES-001",
+  "version": "0.1.0",
+  "rules": {
+    "controlled_if_any": [
+      "risk is high or critical",
+      "content is regulated, contractual, security-sensitive, privacy-sensitive, safety-sensitive, or policy-governed",
+      "release is enterprise-wide or external with material consequence",
+      "automation, live integration, privileged access, or production deployment is included",
+      "source authority is contested or material uncertainty remains",
+      "errors are hard to detect, difficult to reverse, or could materially harm people or operations"
+    ],
+    "fast_track_only_if_all": [
+      "risk is low",
+      "change is narrow and reversible",
+      "governing sources are complete and current",
+      "no material policy, process, interface, audience, or accessibility change exists",
+      "asset scope is simple and acceptance criteria are known",
+      "independent review and release authority are available"
+    ],
+    "default": "standard"
+  },
+  "lanes": [
+    {
+      "lane_id": "fast-track",
+      "record_depth": "combined concise record",
+      "required_gates": ["G00", "G01", "G02", "G03", "G05", "G06", "G08", "G09", "G10", "G11"],
+      "conditional_gates": ["G04", "G07", "G12"],
+      "independence": "independent second look required; role transition recorded when one person fills multiple roles"
+    },
+    {
+      "lane_id": "standard",
+      "record_depth": "separate lifecycle records",
+      "required_gates": ["G00", "G01", "G02", "G03", "G04", "G05", "G06", "G08", "G09", "G10", "G11"],
+      "conditional_gates": ["G07", "G12"],
+      "independence": "independent content and quality review proportional to risk"
+    },
+    {
+      "lane_id": "controlled",
+      "record_depth": "full traceability, evidence, authorization, regression, and lifecycle package",
+      "required_gates": ["G00", "G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11", "G12"],
+      "conditional_gates": [],
+      "independence": "named independent reviewer and authenticated human authority required"
+    }
+  ]
+}

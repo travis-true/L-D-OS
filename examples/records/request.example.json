@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/request.schema.json",
+  "request_id": "REQ-DEMO-001",
+  "title": "Example system search job aid",
+  "requester": "Example process owner",
+  "requested_date": "2026-08-30",
+  "business_need": "Employees need a consistent way to locate a current record during work.",
+  "evidence_of_need": ["Support tickets show repeated search questions."],
+  "consequence_if_unaddressed": "Employees may spend additional time locating records.",
+  "audience": {
+    "description": "General employees with mixed experience",
+    "estimated_reach": 100,
+    "current_proficiency": "mixed",
+    "constraints": ["desktop access", "limited task time"]
+  },
+  "desired_outcome": "Employees locate the correct record using approved search filters.",
+  "requested_output": "quick reference guide",
+  "timing": {"needed_by": "2026-09-30", "flexibility": "moderate"},
+  "constraints": ["Use fictional data", "Follow the approved organization profile"],
+  "existing_materials": ["SRC-DEMO-001"],
+  "stakeholders": ["process owner", "content reviewer", "accessibility reviewer"],
+  "classification": "example",
+  "status": "submitted"
+}

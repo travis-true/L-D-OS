@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/lane-catalog.schema.json",
+  "title": "TEOS lane catalog",
+  "type": "object",
+  "required": ["catalog_id", "version", "rules", "lanes"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "catalog_id": {"type": "string"},
+    "version": {"type": "string"},
+    "rules": {"type": "object"},
+    "lanes": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["lane_id", "record_depth", "required_gates", "conditional_gates", "independence"],
+        "properties": {
+          "lane_id": {"type": "string", "enum": ["fast-track", "standard", "controlled"]},
+          "record_depth": {"type": "string"},
+          "required_gates": {"type": "array", "items": {"type": "string", "pattern": "^G[0-9]{2}$"}},
+          "conditional_gates": {"type": "array", "items": {"type": "string", "pattern": "^G[0-9]{2}$"}},
+          "independence": {"type": "string"}
+        }
+      }
+    }
+  }
+}

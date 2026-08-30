@@ -1,0 +1,137 @@
+{
+  "$schema": "../schemas/gate-catalog.schema.json",
+  "catalog_id": "TEOS-GATES-001",
+  "version": "0.1.0",
+  "gates": [
+    {
+      "gate_id": "G00",
+      "name": "Initiation and scope",
+      "stage": "intake",
+      "decision": "May this request enter the governed workflow?",
+      "required_evidence": ["project identity", "accountable owner", "scope", "classification", "authority map"],
+      "allowed_results": ["AUTHORIZED", "AUTHORIZED_WITH_CONDITIONS", "RETURNED", "NOT_AUTHORIZED"],
+      "human_authority_required": true,
+      "blocking_conditions": ["missing accountable authority", "unknown information boundary", "prohibited use"]
+    },
+    {
+      "gate_id": "G01",
+      "name": "Governed source set",
+      "stage": "brief",
+      "decision": "Are the sources sufficient, authoritative, current, scoped, and permitted for the intended use?",
+      "required_evidence": ["source register", "authority classes", "versions", "conflicts and gaps", "permitted-use decision"],
+      "allowed_results": ["APPROVED", "APPROVED_WITH_CONDITIONS", "RETURNED", "NOT_APPROVED"],
+      "human_authority_required": true,
+      "blocking_conditions": ["material unresolved source conflict", "prohibited source use", "missing governing evidence"]
+    },
+    {
+      "gate_id": "G02",
+      "name": "Triage and lane",
+      "stage": "intake",
+      "decision": "What service disposition and operating lane apply?",
+      "required_evidence": ["need", "audience", "risk", "complexity", "reach", "urgency", "service fit"],
+      "allowed_results": ["FAST_TRACK", "STANDARD", "CONTROLLED", "REDIRECT", "DEFER", "REJECT"],
+      "human_authority_required": true,
+      "blocking_conditions": ["insufficient information to classify material risk"]
+    },
+    {
+      "gate_id": "G03",
+      "name": "Solution recommendation",
+      "stage": "brief",
+      "decision": "Is the recommended intervention supported by the diagnosis?",
+      "required_evidence": ["performance gap", "facts and assumptions", "cause analysis", "training-fit analysis", "recommendation"],
+      "allowed_results": ["APPROVED", "APPROVED_WITH_CONDITIONS", "RETURNED", "NO_INTERVENTION"],
+      "human_authority_required": true,
+      "blocking_conditions": ["training assumed without diagnosis", "material evidence gap"]
+    },
+    {
+      "gate_id": "G04",
+      "name": "Design approval",
+      "stage": "brief",
+      "decision": "Does the intervention design align with the approved problem, audience, outcomes, risk, and constraints?",
+      "required_evidence": ["observable outcomes", "format rationale", "scope", "practice and assessment", "accessibility", "evaluation plan"],
+      "allowed_results": ["APPROVED", "APPROVED_WITH_CONDITIONS", "RETURNED", "NOT_APPROVED"],
+      "human_authority_required": true,
+      "blocking_conditions": ["objective-assessment mismatch", "unresolved accessibility requirement", "unapproved scope expansion"]
+    },
+    {
+      "gate_id": "G05",
+      "name": "Production handoff",
+      "stage": "build",
+      "decision": "Are the asset specifications, roles, inputs, acceptance criteria, and restrictions build-ready?",
+      "required_evidence": ["asset specifications", "acceptance criteria", "role map", "version plan", "approved profile", "source links"],
+      "allowed_results": ["AUTHORIZED", "AUTHORIZED_WITH_CONDITIONS", "RETURNED", "NOT_AUTHORIZED"],
+      "human_authority_required": true,
+      "blocking_conditions": ["missing acceptance criteria", "unclear build authority", "unapproved source or profile"]
+    },
+    {
+      "gate_id": "G06",
+      "name": "Candidate readiness",
+      "stage": "review",
+      "decision": "Is a frozen, identified candidate ready for independent QA?",
+      "required_evidence": ["candidate ID", "fingerprint", "self-check", "source map", "known findings"],
+      "allowed_results": ["READY", "READY_WITH_CONDITIONS", "RETURNED", "NOT_READY"],
+      "human_authority_required": false,
+      "blocking_conditions": ["moving candidate", "missing final bytes", "unresolved source placeholders"]
+    },
+    {
+      "gate_id": "G07",
+      "name": "Technical readiness",
+      "stage": "review",
+      "decision": "Is the applicable tool, package, integration, or automation technically ready for the stated pilot or release?",
+      "required_evidence": ["component baseline", "environment", "identity and permissions", "tests", "failure behavior", "rollback", "findings"],
+      "allowed_results": ["READY", "READY_WITH_CONDITIONS", "NOT_READY", "NOT_APPLICABLE"],
+      "human_authority_required": true,
+      "blocking_conditions": ["unresolved critical finding", "unverified permissions", "missing failure containment", "missing rollback"]
+    },
+    {
+      "gate_id": "G08",
+      "name": "QA disposition",
+      "stage": "review",
+      "decision": "What is the evidence-based quality disposition of the identified candidate?",
+      "required_evidence": ["QA contract", "test matrix", "final-byte inspection", "defect register", "retest evidence"],
+      "allowed_results": ["QA_PASS", "QA_PASS_WITH_CONDITIONS", "QA_FAIL", "NOT_VERIFIED"],
+      "human_authority_required": false,
+      "blocking_conditions": ["blocker", "critical defect", "required major defect", "required test not performed"]
+    },
+    {
+      "gate_id": "G09",
+      "name": "Release authorization",
+      "stage": "publish",
+      "decision": "May this exact candidate be released to the stated audience and channel?",
+      "required_evidence": ["candidate fingerprint", "QA disposition", "open conditions", "audience", "channel", "rollback", "named authority"],
+      "allowed_results": ["AUTHORIZED", "AUTHORIZED_WITH_CONDITIONS", "NOT_AUTHORIZED", "AUTHORIZATION_NOT_VERIFIED"],
+      "human_authority_required": true,
+      "blocking_conditions": ["QA fail", "authorization absent", "invalid exception", "candidate mismatch"]
+    },
+    {
+      "gate_id": "G10",
+      "name": "Publication verification",
+      "stage": "publish",
+      "decision": "Was the authorized candidate published and retrieved through the intended user path?",
+      "required_evidence": ["destination", "access settings", "displayed version/status", "retrieval result", "publisher and date"],
+      "allowed_results": ["VERIFIED", "VERIFIED_WITH_CONDITIONS", "FAILED", "NOT_VERIFIED"],
+      "human_authority_required": false,
+      "blocking_conditions": ["wrong candidate", "incorrect access", "retrieval failure"]
+    },
+    {
+      "gate_id": "G11",
+      "name": "Lifecycle disposition",
+      "stage": "maintenance",
+      "decision": "What is the authorized ongoing disposition of the asset or program?",
+      "required_evidence": ["review trigger", "measures", "source currency", "findings", "materiality", "owner"],
+      "allowed_results": ["CONTINUE", "CONTINUE_WITH_CONDITIONS", "REVISE", "CONSTRAIN", "PAUSE", "REPLACE", "RETIRE"],
+      "human_authority_required": true,
+      "blocking_conditions": ["expired critical source", "uncontained material risk", "owner absent"]
+    },
+    {
+      "gate_id": "G12",
+      "name": "Change authorization",
+      "stage": "change",
+      "decision": "May the proposed change alter the identified baseline under the approved plan?",
+      "required_evidence": ["change record", "earliest affected stage", "impact assessment", "authority", "implementation and regression plan"],
+      "allowed_results": ["APPROVED", "APPROVED_WITH_CONDITIONS", "DEFERRED", "REJECTED"],
+      "human_authority_required": true,
+      "blocking_conditions": ["unknown baseline impact", "authority absent", "regression scope missing"]
+    }
+  ]
+}

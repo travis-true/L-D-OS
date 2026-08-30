@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A governed, accessible intake workflow for training and enablement requests.">
+  <meta name="theme-color" content="#075985">
+  <title>L&amp;D Operating System | Intake</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="site-name" href="index.html" aria-label="L and D Operating System home">
+        <span class="site-mark" aria-hidden="true">L&amp;D</span>
+        <span>Operating System</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a aria-current="page" href="index.html">Start an intake</a>
+        <a href="system.html">Explore the system</a>
+        <a href="https://github.com/travis-true/L-D-OS">View on GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Generic core · Pilot candidate v0.2.0</p>
+          <h1>L&amp;D Operating System</h1>
+          <p class="hero-lede">Governed training and enablement intake, design, delivery, and maintenance.</p>
+          <p>Describe the performance need, audience, evidence, sources, constraints, and success measures. The system will prepare a structured request and non-authoritative routing guidance for human review.</p>
+        </div>
+        <aside class="hero-note" aria-labelledby="public-boundary-title">
+          <h2 id="public-boundary-title">Public-data boundary</h2>
+          <p>This website and repository are public. Do not enter confidential, personal, regulated, proprietary, or restricted information. Reference approved source locations instead of copying source content.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="shell intake-layout" aria-labelledby="intake-title">
+      <aside class="step-panel" aria-label="Intake progress">
+        <div class="progress-copy">
+          <span id="progress-text">Loading intake…</span>
+          <span id="save-state" role="status" aria-live="polite"></span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        <ol id="step-list" class="step-list"></ol>
+        <div class="draft-controls" aria-label="Draft controls">
+          <button type="button" class="button button-secondary" id="save-draft">Save</button>
+          <button type="button" class="button button-secondary" id="resume-draft">Resume</button>
+          <button type="button" class="button button-quiet" id="clear-draft">Clear</button>
+        </div>
+      </aside>
+
+      <div class="form-panel">
+        <noscript>
+          <div class="notice notice-error">JavaScript is required to render the guided intake. The operating-system documentation remains available on the <a href="system.html">system page</a>.</div>
+        </noscript>
+        <div id="load-error" class="notice notice-error" hidden>
+          <h2>Intake unavailable</h2>
+          <p>The form configuration could not be loaded. Refresh the page or use the repository’s training-request Issue form.</p>
+        </div>
+        <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="intake-form" novalidate aria-labelledby="intake-title">
+          <h2 id="intake-title" class="visually-hidden">Training and enablement intake</h2>
+          <div id="form-steps"></div>
+          <div class="form-navigation" hidden>
+            <button type="button" class="button button-secondary" id="previous-step">Back</button>
+            <button type="button" class="button button-primary" id="next-step">Continue</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <p>© 2026 Travis True. Code licensed under <a href="LICENSE">MIT</a>; documentation and L&amp;D OS content licensed under <a href="LICENSE-CONTENT.md">CC BY 4.0</a>.</p>
+      <p><a href="https://github.com/travis-true">GitHub profile</a> · <a href="https://github.com/travis-true/L-D-OS/issues">Repository issues</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/source.schema.json",
+  "title": "Governed source record",
+  "type": "object",
+  "required": ["source_id", "title", "type", "location", "owner", "version_or_date", "scope", "authority_class", "classification", "integrity_status", "permitted_use", "validation_status"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]{3,40}$"},
+    "title": {"type": "string"},
+    "type": {"type": "string"},
+    "location": {"type": "string"},
+    "owner": {"type": "string"},
+    "version_or_date": {"type": "string"},
+    "scope": {"type": "string"},
+    "authority_class": {"type": "string", "enum": ["governing", "approved-supporting", "operational-evidence", "sme-testimony", "historical", "example", "unverified", "conflicting", "excluded"]},
+    "classification": {"type": "string"},
+    "integrity_status": {"type": "string", "enum": ["verified", "not-verified", "incomplete", "altered", "corrupt"]},
+    "permitted_use": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "conflicts": {"type": "array", "items": {"type": "string"}},
+    "validation_status": {"type": "string", "enum": ["READY", "READY WITH CONDITIONS", "NOT READY", "NOT VERIFIED"]}
+  }
+}

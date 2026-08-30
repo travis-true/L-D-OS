@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/travis-true/L-D-OS/main/schemas/request.schema.json",
+  "document_status": "SUBMISSION_CANDIDATE",
+  "authority_notice": "This intake and its recommendations are not gate approval or release authorization.",
+  "request_id": "REQ-20260830-SAMPLE",
+  "title": "Customer support workflow launch",
+  "requester": "sample-requester",
+  "requested_date": "2026-08-30",
+  "business_need": "Support specialists need to complete the revised workflow accurately at launch.",
+  "evidence_of_need": [
+    "Pilot observations identified inconsistent routing."
+  ],
+  "consequence_if_unaddressed": "Incorrect routing will increase rework and resolution time.",
+  "audience": {
+    "description": "Customer support specialists with mixed experience.",
+    "estimated_reach": 40,
+    "current_proficiency": "mixed",
+    "constraints": [
+      "Distributed schedules"
+    ]
+  },
+  "desired_outcome": "Specialists route representative cases correctly using the approved workflow.",
+  "requested_output": "live-training",
+  "timing": {
+    "needed_by": "2026-10-01",
+    "flexibility": "limited"
+  },
+  "constraints": [
+    "One hour maximum"
+  ],
+  "existing_materials": [
+    "Workflow standard"
+  ],
+  "stakeholders": [
+    "Operations",
+    "Quality",
+    "Learning team"
+  ],
+  "classification": "public-safe-reference-only",
+  "status": "submitted",
+  "intake_extensions": {
+    "config_version": "0.2.0",
+    "sponsor": "Operations sponsor",
+    "accessibility_needs": [
+      "Captions and keyboard-accessible materials"
+    ],
+    "sources": [
+      {
+        "title": "Workflow standard",
+        "owner": "Operations",
+        "version": "2026-08-15",
+        "url": "https://example.org/workflow",
+        "authority": "governing",
+        "access_notes": "Public-safe fictional sample"
+      }
+    ],
+    "source_gaps": [],
+    "routing_evidence": {
+      "moment": "before",
+      "memory": "both",
+      "frequency": "high",
+      "criticality": "moderate",
+      "skill_type": "procedural",
+      "shelf_life": "moderate-change",
+      "reach": "department"
+    },
+    "conditional_details": {
+      "session_modality": "virtual",
+      "session_duration": "60 minutes",
+      "practice_feedback": "Learners practice three cases and receive facilitator feedback."
+    },
+    "risk_factors": [],
+    "success_measures": [
+      "At least 90% correct routing in the approved simulation"
+    ],
+    "acceptance_criteria": [
+      "All scenarios trace to the governing workflow"
+    ],
+    "proposed_owner": "Operations enablement owner",
+    "review_trigger": "Workflow revision or annual review",
+    "unresolved_questions": [],
+    "public_data_acknowledgment": true,
+    "recommendation": {
+      "lane": "standard",
+      "format": "facilitated session",
+      "requiredGates": [
+        "G00",
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G08",
+        "G09",
+        "G10",
+        "G11"
+      ],
+      "conditionalGates": [
+        "G07",
+        "G12"
+      ],
+      "warnings": [
+        "The requested output is an input; diagnosis may recommend a different intervention."
+      ]
+    }
+  }
+}

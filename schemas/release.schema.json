@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/release.schema.json",
+  "title": "Release and publication record",
+  "type": "object",
+  "required": ["release_id", "project_id", "asset_id", "candidate_id", "candidate_sha256", "qa_disposition", "authorization", "audience", "channel", "publication_status", "owner", "support", "review_trigger"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "release_id": {"type": "string", "pattern": "^REL-[A-Z0-9-]{3,40}$"},
+    "project_id": {"type": "string"},
+    "asset_id": {"type": "string"},
+    "candidate_id": {"type": "string"},
+    "candidate_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "qa_disposition": {"type": "string", "enum": ["QA_PASS", "QA_PASS_WITH_CONDITIONS", "QA_FAIL", "NOT_VERIFIED"]},
+    "authorization": {"type": "string", "enum": ["AUTHORIZED", "AUTHORIZED_WITH_CONDITIONS", "NOT_AUTHORIZED", "AUTHORIZATION_NOT_VERIFIED"]},
+    "authority": {"type": "string"},
+    "conditions": {"type": "array", "items": {"type": "string"}},
+    "audience": {"type": "string"},
+    "channel": {"type": "string"},
+    "destination": {"type": "string"},
+    "publication_status": {"type": "string", "enum": ["not-published", "published-not-verified", "published-verified", "publication-failed", "withdrawn"]},
+    "publication_evidence_ids": {"type": "array", "items": {"type": "string"}},
+    "rollback": {"type": "string"},
+    "owner": {"type": "string"},
+    "support": {"type": "string"},
+    "review_trigger": {"type": "string"}
+  }
+}

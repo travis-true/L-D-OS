@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/lifecycle-review.schema.json",
+  "title": "Lifecycle review record",
+  "type": "object",
+  "required": ["review_id", "project_id", "asset_or_program_id", "trigger", "measures", "findings", "materiality", "decision", "actions", "owner", "next_review"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "review_id": {"type": "string", "pattern": "^REV-[A-Z0-9-]{3,40}$"},
+    "project_id": {"type": "string"},
+    "asset_or_program_id": {"type": "string"},
+    "trigger": {"type": "string"},
+    "measures": {"type": "array", "items": {"type": "object", "required": ["name", "evidence_level", "result", "limitation"]}},
+    "findings": {"type": "array", "items": {"type": "string"}},
+    "materiality": {"type": "string", "enum": ["none", "minor", "material", "critical", "not-verified"]},
+    "decision": {"type": "string", "enum": ["CONTINUE", "CONTINUE_WITH_CONDITIONS", "REVISE", "CONSTRAIN", "PAUSE", "REPLACE", "RETIRE"]},
+    "actions": {"type": "array", "items": {"type": "string"}},
+    "owner": {"type": "string"},
+    "next_review": {"type": "string"}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "profile_id": "generic-example-v0.1.0",
+  "organization": {
+    "name": "Example Organization",
+    "short_name": "EXAMPLE"
+  },
+  "typography": {
+    "heading_font": "Arial",
+    "body_font": "Arial",
+    "fallback_fonts": ["Helvetica", "sans-serif"]
+  },
+  "colors": {
+    "primary": "1F4E79",
+    "secondary": "4D4D4D",
+    "accent": "2F75B5",
+    "body_text": "222222",
+    "background": "FFFFFF",
+    "on_primary_text": "FFFFFF"
+  },
+  "rules": {
+    "heading_case": "sentence",
+    "logo": "No logo is included in the generic profile.",
+    "restricted_color_uses": ["Do not use color as the only indicator of meaning."]
+  },
+  "accessibility": {
+    "target": "WCAG 2.2 Level AA where applicable",
+    "non_web_guidance": "Apply approved non-web accessibility guidance for documents and software.",
+    "manual_review_required": true
+  },
+  "output": {
+    "file_naming_pattern": "{topic}_{asset-type}_{yyyy-mm-dd}_v{version}",
+    "default_classification": "organization-defined",
+    "delivery_channels": ["LMS", "intranet", "knowledge base", "collaboration platform"]
+  }
+}

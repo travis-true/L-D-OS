@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Guided L&D intake
+    url: https://travis-true.github.io/L-D-OS/
+    about: Prepare a governed request, JSON record, Markdown brief, and prefilled Issue.

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/teos/schemas/gate-catalog.schema.json",
+  "title": "TEOS gate catalog",
+  "type": "object",
+  "required": ["catalog_id", "version", "gates"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "catalog_id": {"type": "string", "pattern": "^TEOS-GATES-[0-9]{3}$"},
+    "version": {"type": "string"},
+    "gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["gate_id", "name", "stage", "decision", "required_evidence", "allowed_results", "human_authority_required", "blocking_conditions"],
+        "properties": {
+          "gate_id": {"type": "string", "pattern": "^G[0-9]{2}$"},
+          "name": {"type": "string"},
+          "stage": {"type": "string"},
+          "decision": {"type": "string"},
+          "required_evidence": {"type": "array", "items": {"type": "string"}},
+          "allowed_results": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "human_authority_required": {"type": "boolean"},
+          "blocking_conditions": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

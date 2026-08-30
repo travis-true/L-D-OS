@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/checklist.schema.json",
+  "checklist_id": "CHK-ELEARN-001",
+  "asset_type": "elearning",
+  "version": "0.1.0",
+  "categories": [
+    {"name": "alignment", "items": [
+      {"check_id": "ELN-L01", "requirement": "Observable outcomes, content, practice, assessment, and evaluation target the same performance level.", "blocking_if_failed": true},
+      {"check_id": "ELN-L02", "requirement": "Content and scenarios trace to current approved sources.", "blocking_if_failed": true}
+    ]},
+    {"name": "experience", "items": [
+      {"check_id": "ELN-X01", "requirement": "Instructions, navigation, feedback, recovery, pacing, and chunking support the intended audience.", "blocking_if_failed": true},
+      {"check_id": "ELN-X02", "requirement": "The module uses the approved profile and avoids unnecessary duplicate narration and on-screen text.", "blocking_if_failed": false}
+    ]},
+    {"name": "accessibility", "items": [
+      {"check_id": "ELN-A01", "requirement": "Keyboard, focus order, screen-reader semantics, contrast, alt text, captions, transcripts, zoom/reflow, and interaction alternatives were tested as applicable.", "blocking_if_failed": true}
+    ]},
+    {"name": "technical", "items": [
+      {"check_id": "ELN-T01", "requirement": "The approved interoperability package was tested in the actual target LMS for launch, completion, score, time, resume, and error behavior.", "blocking_if_failed": true},
+      {"check_id": "ELN-T02", "requirement": "Version, reporting, privacy, support, rollback, owner, and review trigger are recorded.", "blocking_if_failed": true}
+    ]}
+  ]
+}

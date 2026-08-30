@@ -1,0 +1,160 @@
+{
+  "$schema": "../schemas/intake-form.schema.json",
+  "config_id": "LDOS-INTAKE-001",
+  "version": "0.2.0",
+  "repository": "travis-true/L-D-OS",
+  "issue_url": "https://github.com/travis-true/L-D-OS/issues/new",
+  "issue_body_url_limit": 6000,
+  "storage_key": "ldos-intake-draft-v0.2.0",
+  "steps": [
+    {
+      "id": "request",
+      "title": "Request",
+      "description": "Identify the request and the person responsible for clarifying it.",
+      "fields": [
+        {"id": "title", "label": "Request name", "type": "text", "required": true, "minLength": 5, "autocomplete": "off", "help": "Use a short, specific name that describes the business need."},
+        {"id": "requester", "label": "Requester or intake owner", "type": "text", "required": true, "autocomplete": "name", "help": "Use a GitHub username or public professional name. Do not enter private contact information."},
+        {"id": "request_type", "label": "Request type", "type": "select", "required": true, "options": [
+          {"value": "undetermined", "label": "Undetermined solution"},
+          {"value": "live-training", "label": "Live training session"},
+          {"value": "self-paced", "label": "Self-paced learning"},
+          {"value": "performance-support", "label": "Performance-support asset"},
+          {"value": "assessment-evaluation", "label": "Assessment or evaluation"},
+          {"value": "communication-change", "label": "Communication or change enablement"},
+          {"value": "blended-program", "label": "Blended program"}
+        ], "help": "Choose Undetermined when the solution should follow diagnosis."},
+        {"id": "sponsor", "label": "Sponsor or decision owner", "type": "text", "required": true, "help": "Name the role or public professional name accountable for the need."}
+      ]
+    },
+    {
+      "id": "need",
+      "title": "Performance need",
+      "description": "Describe observable performance and evidence before selecting a solution.",
+      "fields": [
+        {"id": "business_need", "label": "Business or performance need", "type": "textarea", "required": true, "minLength": 10, "rows": 5, "help": "What is happening now, what should happen, and why does the gap matter?"},
+        {"id": "evidence_of_need", "label": "Evidence of the need", "type": "textarea-lines", "rows": 4, "help": "Enter one public-safe evidence statement per line."},
+        {"id": "consequence_if_unaddressed", "label": "Consequence if unaddressed", "type": "textarea", "required": true, "minLength": 10, "rows": 3},
+        {"id": "desired_outcome", "label": "Desired observable outcome", "type": "textarea", "required": true, "minLength": 10, "rows": 4, "help": "Describe what people should do differently, not only what they should know."}
+      ]
+    },
+    {
+      "id": "audience",
+      "title": "Audience",
+      "description": "Define who needs support and the conditions affecting performance.",
+      "fields": [
+        {"id": "audience_description", "label": "Audience description", "type": "textarea", "required": true, "minLength": 5, "rows": 3},
+        {"id": "estimated_reach", "label": "Estimated number of people", "type": "number", "required": true, "min": 1, "step": 1},
+        {"id": "current_proficiency", "label": "Current proficiency", "type": "select", "required": true, "options": [
+          {"value": "new", "label": "New to the task"},
+          {"value": "developing", "label": "Developing"},
+          {"value": "mixed", "label": "Mixed experience"},
+          {"value": "experienced", "label": "Experienced"},
+          {"value": "not-verified", "label": "Not verified"}
+        ]},
+        {"id": "audience_constraints", "label": "Audience constraints", "type": "textarea-lines", "rows": 4, "help": "One constraint per line: time, language, location, technology, schedule, or prior knowledge."},
+        {"id": "accessibility_needs", "label": "Known accessibility or accommodation needs", "type": "textarea-lines", "rows": 4, "help": "Record known requirements and unknowns. Do not include medical or personal information."}
+      ]
+    },
+    {
+      "id": "sources",
+      "title": "Sources",
+      "description": "Reference authoritative material without uploading or copying sensitive content.",
+      "fields": [
+        {"id": "sources", "label": "Source references", "type": "repeatable", "addLabel": "Add source", "minItems": 1, "required": true, "fields": [
+          {"id": "title", "label": "Source title", "type": "text", "required": true},
+          {"id": "owner", "label": "Owner or authority", "type": "text", "required": true},
+          {"id": "version", "label": "Version or date", "type": "text", "required": true},
+          {"id": "url", "label": "Public or approved reference link", "type": "url", "required": false},
+          {"id": "authority", "label": "Authority class", "type": "select", "required": true, "options": [
+            {"value": "governing", "label": "Governing"},
+            {"value": "approved-supporting", "label": "Approved supporting"},
+            {"value": "operational-evidence", "label": "Operational evidence"},
+            {"value": "reference", "label": "Reference"},
+            {"value": "not-verified", "label": "Not verified"}
+          ]},
+          {"id": "access_notes", "label": "Access or use notes", "type": "textarea", "rows": 2, "required": true}
+        ]},
+        {"id": "source_gaps", "label": "Known source gaps or conflicts", "type": "textarea-lines", "rows": 4}
+      ]
+    },
+    {
+      "id": "routing",
+      "title": "Routing evidence",
+      "description": "These dimensions support a recommendation; they do not approve a solution.",
+      "fields": [
+        {"id": "moment", "label": "When is support needed?", "type": "select", "required": true, "options": [
+          {"value": "before", "label": "Before performance"}, {"value": "during", "label": "During performance"}, {"value": "after-error", "label": "After an error"}, {"value": "multiple", "label": "Multiple moments"}
+        ]},
+        {"id": "memory", "label": "Must performance be recalled or referenced?", "type": "select", "required": true, "options": [
+          {"value": "recall", "label": "Recalled"}, {"value": "reference", "label": "Referenced"}, {"value": "both", "label": "Both"}
+        ]},
+        {"id": "frequency", "label": "Task frequency", "type": "select", "required": true, "options": [
+          {"value": "high", "label": "High"}, {"value": "moderate", "label": "Moderate"}, {"value": "low", "label": "Low"}, {"value": "one-time", "label": "One-time"}
+        ]},
+        {"id": "criticality", "label": "Consequence of error", "type": "select", "required": true, "options": [
+          {"value": "low", "label": "Low"}, {"value": "moderate", "label": "Moderate"}, {"value": "high", "label": "High"}, {"value": "critical", "label": "Critical"}
+        ]},
+        {"id": "skill_type", "label": "Required performance", "type": "select", "required": true, "options": [
+          {"value": "knowledge", "label": "Knowledge"}, {"value": "procedural", "label": "Procedural"}, {"value": "decision", "label": "Decision-making"}, {"value": "interpersonal", "label": "Interpersonal"}, {"value": "mixed", "label": "Mixed"}
+        ]},
+        {"id": "shelf_life", "label": "Content volatility", "type": "select", "required": true, "options": [
+          {"value": "high-change", "label": "Changes often"}, {"value": "moderate-change", "label": "Changes periodically"}, {"value": "stable", "label": "Relatively stable"}
+        ]},
+        {"id": "reach_scope", "label": "Audience reach", "type": "select", "required": true, "options": [
+          {"value": "individual", "label": "Individual"}, {"value": "team", "label": "Team"}, {"value": "department", "label": "Department"}, {"value": "enterprise", "label": "Enterprise"}, {"value": "external", "label": "External"}
+        ]},
+        {"id": "session_modality", "label": "Session modality", "type": "select", "required": true, "showWhen": {"field": "request_type", "in": ["live-training", "blended-program"]}, "options": [
+          {"value": "virtual", "label": "Virtual"}, {"value": "in-person", "label": "In person"}, {"value": "hybrid", "label": "Hybrid"}, {"value": "not-decided", "label": "Not decided"}
+        ]},
+        {"id": "session_duration", "label": "Target session duration", "type": "text", "required": true, "showWhen": {"field": "request_type", "in": ["live-training", "blended-program"]}},
+        {"id": "practice_feedback", "label": "Required practice and feedback", "type": "textarea", "rows": 3, "required": true, "showWhen": {"field": "request_type", "in": ["live-training", "self-paced", "blended-program"]}},
+        {"id": "delivery_platform", "label": "Delivery platform or environment", "type": "text", "required": true, "showWhen": {"field": "request_type", "in": ["self-paced", "performance-support", "assessment-evaluation", "blended-program"]}},
+        {"id": "assessment_purpose", "label": "Assessment or evaluation purpose", "type": "textarea", "rows": 3, "required": true, "showWhen": {"field": "request_type", "in": ["assessment-evaluation", "blended-program"]}},
+        {"id": "change_description", "label": "Change being enabled", "type": "textarea", "rows": 3, "required": true, "showWhen": {"field": "request_type", "in": ["communication-change", "blended-program"]}},
+        {"id": "known_components", "label": "Known or proposed components", "type": "textarea-lines", "rows": 4, "showWhen": {"field": "request_type", "in": ["undetermined", "blended-program"]}}
+      ]
+    },
+    {
+      "id": "constraints",
+      "title": "Constraints and risk",
+      "description": "Record timing, stakeholders, risk triggers, and the public-data boundary.",
+      "fields": [
+        {"id": "needed_by", "label": "Need-by date or timing", "type": "text", "required": true, "help": "Use YYYY-MM-DD when a firm date exists; otherwise describe the event or window."},
+        {"id": "flexibility", "label": "Timing flexibility", "type": "select", "required": true, "options": [
+          {"value": "fixed", "label": "Fixed"}, {"value": "limited", "label": "Limited flexibility"}, {"value": "flexible", "label": "Flexible"}, {"value": "not-verified", "label": "Not verified"}
+        ]},
+        {"id": "constraints", "label": "Project constraints", "type": "textarea-lines", "rows": 4, "required": true, "minItems": 1},
+        {"id": "stakeholders", "label": "Stakeholders and reviewers", "type": "textarea-lines", "rows": 4, "required": true, "minItems": 1},
+        {"id": "risk_factors", "label": "Risk factors", "type": "checkboxes", "options": [
+          {"value": "regulated", "label": "Regulated, contractual, or policy-governed content"},
+          {"value": "security-privacy", "label": "Security- or privacy-sensitive content"},
+          {"value": "safety", "label": "Safety-sensitive performance"},
+          {"value": "enterprise-external", "label": "Enterprise-wide or external release"},
+          {"value": "automation-integration", "label": "Automation, integration, privileged access, or production deployment"},
+          {"value": "source-uncertainty", "label": "Contested sources or material uncertainty"},
+          {"value": "hard-to-reverse", "label": "Errors are difficult to detect or reverse"}
+        ]},
+        {"id": "public_data_acknowledgment", "label": "I confirm this intake excludes confidential, personal, regulated, and proprietary information and uses references instead of sensitive source content.", "type": "checkbox", "required": true}
+      ]
+    },
+    {
+      "id": "success",
+      "title": "Success and ownership",
+      "description": "Define evidence, acceptance, ownership, and maintenance before build work begins.",
+      "fields": [
+        {"id": "success_measures", "label": "Success measures", "type": "textarea-lines", "rows": 4, "required": true, "minItems": 1, "help": "Use observable performance or business evidence; completion alone is rarely sufficient."},
+        {"id": "acceptance_criteria", "label": "Acceptance criteria", "type": "textarea-lines", "rows": 5, "required": true, "minItems": 1},
+        {"id": "asset_owner", "label": "Proposed operational owner", "type": "text", "required": true},
+        {"id": "review_trigger", "label": "Review trigger or cadence", "type": "text", "required": true, "help": "Examples: source update, interface change, policy revision, or annual review."},
+        {"id": "additional_questions", "label": "Unresolved questions", "type": "textarea-lines", "rows": 4}
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "description": "Review the draft, recommendations, missing information, and generated outputs.",
+      "summary": true,
+      "fields": []
+    }
+  ]
+}
