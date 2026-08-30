@@ -30,8 +30,8 @@
     },
     {
       "path": ".github/workflows/pages.yml",
-      "size_bytes": 1396,
-      "sha256": "dabcefbcf07aa4cb8c63b5d7329d4f4d258015d2a044607ccf757b8f38f1e0cf"
+      "size_bytes": 1437,
+      "sha256": "fddc2be39c68bc020e5b9a7136c13fbf629983e4d42b73d46a934945bfe7a632"
     },
     {
       "path": ".github/workflows/validate.yml",
