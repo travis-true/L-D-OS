@@ -8,7 +8,7 @@ Use this checklist when a connected tool cannot change repository-level settings
 - Pages source: **GitHub Actions — complete**
 - Public site retrieval: **Complete** at <https://travis-true.github.io/L-D-OS/>
 - Validation and Pages workflows: **Passing**
-- Intake labels: **Automation-managed after the intake-triage workflow reaches `main`**
+- Intake labels: **Automation-managed — live verification complete on Issue #4**
 - `main` protection and the `v0.2.0` prerelease: **Owner action still required**
 
 ## Repository visibility and Issues
