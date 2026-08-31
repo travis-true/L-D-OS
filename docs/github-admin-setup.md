@@ -2,11 +2,21 @@
 
 Use this checklist when a connected tool cannot change repository-level settings.
 
+## Current deployment status
+
+- Repository visibility: **Public — complete**
+- Pages source: **GitHub Actions — complete**
+- Public site retrieval: **Complete** at <https://travis-true.github.io/L-D-OS/>
+- Validation and Pages workflows: **Passing**
+- Labels, `main` protection, and the `v0.2.0` prerelease: **Owner action still required**
+
 ## Repository visibility and Issues
 
 1. Open **Settings → General**.
 2. Under **Features**, confirm **Issues** is enabled.
 3. Under **Danger Zone → Change repository visibility**, select **Change visibility → Make public** and confirm `travis-true/L-D-OS`.
+
+Repository visibility is complete. Confirm Issues remains enabled before creating the labels below.
 
 ## GitHub Pages
 
