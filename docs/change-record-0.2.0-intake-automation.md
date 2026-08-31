@@ -47,3 +47,7 @@ Automate repeatable GitHub administration and triage preparation after a public 
 ## Rollback
 
 Disable `.github/workflows/intake-triage.yml` or revert this change. Existing Issues, comments, and labels remain visible evidence; do not delete them during rollback. Return affected Issues to the last verified human state and record any corrected gate status explicitly.
+
+## Live verification
+
+The first controlled `main` run on `2026-08-31` created the label catalog and processed Issue #4. It applied the expected intake, information-needed, triage, request-type, provisional-lane, initial-risk, and gate-decision-required labels and created one marked triage-preparation comment. No gate label, diagnosis authorization, design authorization, build authorization, asset, or release was created.
