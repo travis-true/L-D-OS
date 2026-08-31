@@ -46,6 +46,7 @@ h3 { margin: 0 0 0.5rem; font-size: 1.16rem; }
 p { margin: 0 0 1rem; }
 button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
 :focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }
 
 .shell { width: min(calc(100% - 2rem), var(--max-width)); margin-inline: auto; }
