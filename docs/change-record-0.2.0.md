@@ -57,4 +57,4 @@ Move `main` back to the v0.1.0 baseline commit or disable the Pages deployment w
 
 ## Verification corrective action
 
-Live keyboard verification on `2026-08-31` identified two presentation defects: the skip target did not accept focus, and the final-step navigation button's `hidden` state was overridden by its component display rule. The corrective change adds a focusable main target, enforces the native hidden state, and extends automated validation to prevent regression. No governed path, ID, schema, routing rule, or intake record contract changed.
+Live keyboard verification on `2026-08-31` identified two presentation defects: the skip target did not accept focus, and the final-step navigation button's `hidden` state was overridden by its component display rule. The corrective change adds a focusable main target, enforces the native hidden state, versions the stylesheet reference to prevent stale Pages caching, and extends automated validation to prevent regression. No governed path, ID, schema, routing rule, or intake record contract changed.
