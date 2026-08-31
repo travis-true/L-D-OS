@@ -31,6 +31,7 @@ More Copilot use
 ## Governed source references
 
 - Authority class: reference
+- Link: https://docs.google.com/document/d/example/edit?usp=drivesdk&ouid=1234
 - Access/use notes: This is the source of truth and needs to be reformatted
 
 ### Source gaps or conflicts
@@ -64,6 +65,9 @@ More Copilot use
 
 - None
 
+- Proposed operational owner: True
+- Review trigger: Annual
+
 ### Known accessibility or accommodation needs
 
 - Not provided
@@ -92,6 +96,7 @@ test("triage analysis identifies gaps and contradictions without deciding gates"
   assert.ok(analysis.gaps.some((item) => item.includes("Evidence")));
   assert.ok(analysis.gaps.some((item) => item.includes("Acceptance")));
   assert.ok(analysis.warnings.some((item) => item.includes("authority is inconsistent")));
+  assert.ok(analysis.warnings.some((item) => item.includes("sharing parameters")));
   assert.ok(analysis.warnings.some((item) => item.includes("YYYY-MM-DD")));
 });
 
