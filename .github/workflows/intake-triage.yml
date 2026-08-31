@@ -1,0 +1,58 @@
+name: Prepare intake triage
+
+on:
+  issues:
+    types: [opened, edited, reopened, labeled, unlabeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Optional intake Issue number to process
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/intake-triage.yml
+      - automation/intake-triage.mjs
+      - data/github-labels.json
+      - schemas/github-label-catalog.schema.json
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: intake-triage-${{ github.event.issue.number || inputs.issue_number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out governed automation
+        uses: actions/checkout@v7
+      - name: Validate controlled inputs
+        run: |
+          python3 scripts/validate_core.py
+          python3 scripts/validate_site.py
+          node --test tests/*.test.mjs
+      - name: Create labels and prepare triage
+        uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+          BOOTSTRAP_OPEN: ${{ github.event_name == 'push' }}
+          LDOS_INTAKE_OWNER: ${{ vars.LDOS_INTAKE_OWNER }}
+        with:
+          script: |
+            const modulePath = `${process.env.GITHUB_WORKSPACE}/automation/intake-triage.mjs`;
+            const { pathToFileURL } = await import('node:url');
+            const { run } = await import(pathToFileURL(modulePath).href);
+            await run({
+              github,
+              context,
+              core,
+              issueNumber: process.env.ISSUE_NUMBER,
+              bootstrapOpen: process.env.BOOTSTRAP_OPEN === 'true',
+              intakeOwner: process.env.LDOS_INTAKE_OWNER || ''
+            });

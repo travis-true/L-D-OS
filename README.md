@@ -19,6 +19,8 @@ The repository root is a dependency-free GitHub Pages site. Its JSON-configured 
 - recommends a lane, likely intervention direction, and applicable gates without granting approval;
 - blocks Issue creation until required information and the public-data acknowledgment are complete.
 
+After submission, the governed intake automation creates and maintains the repository labels, prepares a non-authoritative completeness and routing comment, advances only deterministic workflow states, and waits for named human gate labels before diagnosis, design, or build.
+
 The public form accepts source references only. Do not enter confidential, personal, regulated, proprietary, or restricted information.
 
 ## Operating lifecycle
@@ -59,7 +61,7 @@ No package installation or production dependency is required.
 | --- | --- |
 | `index.html`, `system.html` | Intake homepage and accessible system guide |
 | `assets/` | Configurable CSS, JavaScript, and generic visual assets |
-| `data/` | Versioned intake configuration |
+| `data/` | Versioned intake and GitHub label configuration |
 | `tests/` | Deterministic JavaScript and fixture tests |
 | `workflows/` | Human-readable operating procedures |
 | `decisions/` | Machine-readable gates, lanes, and format-routing rules |
@@ -69,7 +71,7 @@ No package installation or production dependency is required.
 | `checklists/` | Format-specific definition-of-done controls |
 | `automation/` | Safe adapter contracts with no release authority |
 | `docs/` | Architecture, governance, pilot, QA, change, and deployment guidance |
-| `.github/` | Issue forms, pull-request controls, validation, and Pages deployment |
+| `.github/` | Issue forms, pull-request controls, validation, intake triage, and Pages deployment |
 
 ## Authority boundary
 

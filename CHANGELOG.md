@@ -9,6 +9,7 @@
 - Added public-data acknowledgment, source-reference-only controls, and long-Issue clipboard fallback.
 - Added accessible web views of the operating model, workflows, lanes, gates, schemas, and pilot approach.
 - Added deterministic JavaScript tests, site validation, sample intake outputs, and Pages deployment automation.
+- Added governed Issue-triage automation for label creation, completeness checks, contradiction warnings, provisional lane/risk guidance, updateable triage comments, and human-gated state transitions.
 - Resolved the public license decision: MIT for code and CC BY 4.0 for documentation and L&D OS content.
 - Preserved the v0.1.0 governed core paths and IDs.
 
