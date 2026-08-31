@@ -150,8 +150,8 @@
     },
     {
       "path": "docs/change-record-0.2.0.md",
-      "size_bytes": 3557,
-      "sha256": "08d980a55f9846a55aa23a18bbf2269f8927c64abc21ee8df83aef24da585df4"
+      "size_bytes": 3623,
+      "sha256": "d2ee851101bb1f47fa81c45dac111a2abd48d005874a985cfd0279e4d4f885a9"
     },
     {
       "path": "docs/github-admin-setup.md",
@@ -210,8 +210,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 4559,
-      "sha256": "ac52a28cf8c5ac5ae3cf54ae77605c14089bb7e2b53358f28e9b2bae933caf0c"
+      "size_bytes": 4576,
+      "sha256": "d3a5beb5d773d1f62c3878148df90d4609a4346fe0b62afff93f43c18e5060da"
     },
     {
       "path": "package.json",
@@ -345,8 +345,8 @@
     },
     {
       "path": "system.html",
-      "size_bytes": 8355,
-      "sha256": "9a7f1075d50cbe3ac3c034dee94f5f42af9fc84a770c718305dc150cb9248be6"
+      "size_bytes": 8372,
+      "sha256": "2c3ce7a6eae96859b92054331f974292e274c7b9e67498071f04a495674dd3dc"
     },
     {
       "path": "tests/fixtures/complete-state.json",
