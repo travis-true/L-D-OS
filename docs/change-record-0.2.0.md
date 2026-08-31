@@ -54,3 +54,7 @@ Deploy the approved generic core to `travis-true/L-D-OS` and add a public GitHub
 ## Rollback
 
 Move `main` back to the v0.1.0 baseline commit or disable the Pages deployment workflow. Preserve failed-run logs, downloaded evidence, and this change record. Do not delete submitted Issues during rollback; label and disposition them under change control.
+
+## Verification corrective action
+
+Live keyboard verification on `2026-08-31` identified two presentation defects: the skip target did not accept focus, and the final-step navigation button's `hidden` state was overridden by its component display rule. The corrective change adds a focusable main target, enforces the native hidden state, and extends automated validation to prevent regression. No governed path, ID, schema, routing rule, or intake record contract changed.
