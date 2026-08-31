@@ -4,7 +4,7 @@
 
 - Package: L&D Operating System generic core and intake site
 - Version: `0.2.0`
-- Review date: `2026-08-30`
+- Review date: `2026-08-31`
 - Candidate status: `PILOT CANDIDATE`
 - QA disposition: `QA_PASS_WITH_CONDITIONS`
 - Public deployment authorization: `AUTHORIZED FOR CONTROLLED PILOT`
@@ -27,20 +27,23 @@ This disposition applies to the repository and intake-site candidate. It does no
 | Privacy/security boundary | PASS | No analytics, backend, upload control, credential, or automatic Issue write; public-data acknowledgment required. |
 | Generic boundary | PASS | No prohibited organization-specific names or internal contacts found. |
 | Authority boundary | PASS | Recommendations are non-authoritative; human gates and release decisions remain explicit. |
-| Live browser and keyboard execution | NOT VERIFIED | Cloud browser could not reach the local-only preview; repeat on the deployed public Pages URL. |
-| Automated accessibility scan | NOT VERIFIED | Run against the deployed public Pages URL before closing the pilot gate. |
-| GitHub Pages retrieval | NOT VERIFIED | Requires repository visibility and Pages settings plus a successful deployment run. |
+| Live browser execution | PASS | Public Pages site completed the full intake path from required-field errors through conditional live-session fields, source governance, public-data acknowledgment, review, save/resume, build-brief copy, and Issue readiness. No Issue was submitted. |
+| Keyboard execution | PASS | First Tab exposed the skip link; the skip target was corrected to accept programmatic focus. Native controls, visible focus rules, step-heading focus, and error-summary focus were verified. |
+| Live semantic accessibility scan | PASS | Deployed DOM audit found one `main`, navigation, banner, and footer landmark; one H1; ordered visible headings; no duplicate IDs; no unnamed interactive controls; and an English document language. |
+| Generated-file verification | PASS | Deterministic JSON and Markdown examples match the controlled fixture; final review enabled both download actions and produced a copy-ready governed build brief. |
+| Responsive design rules | PASS | Desktop, tablet, and mobile breakpoints plus single-column fallbacks are present and validated in source. |
+| GitHub Pages retrieval | PASS | Public intake and system pages retrieved at `https://travis-true.github.io/L-D-OS/`; validation and Pages workflows completed successfully. |
+| Independent mobile/tablet runtime matrix | NOT VERIFIED | The controlled cloud browser did not expose viewport emulation. Repeat the documented viewport matrix on physical devices or an approved browser-testing service. |
+| Third-party WCAG conformance scan | NOT VERIFIED | Automated source and live-DOM checks passed, but no axe, Accessibility Insights, Lighthouse, or equivalent external report was captured. |
 
 ## Conditions
 
-1. Make the repository public and select GitHub Actions as the Pages source.
-2. Confirm the validation and Pages workflows pass on the committed candidate.
-3. Complete live desktop/mobile, keyboard-only, and automated accessibility checks on the public Pages URL.
-4. Create the documented intake labels and protect `main` after the `validate` check has run successfully.
-5. Publish `v0.2.0` as a prerelease only after the public site is retrieved successfully.
-6. Run the controlled pilot in `pilot-plan.md` before broader operational adoption.
-7. Validate each future renderer, connector, publishing job, and learning asset independently.
+1. Complete the independent mobile/tablet runtime matrix and retain a third-party accessibility scan before claiming WCAG 2.2 AA conformance.
+2. Create the documented intake labels and protect `main` after the `validate` check has run successfully.
+3. Publish `v0.2.0` as a prerelease and attach the validated source archive.
+4. Run the controlled pilot in `pilot-plan.md` before broader operational adoption.
+5. Validate each future renderer, connector, publishing job, and learning asset independently.
 
 ## Decision
 
-The candidate may be committed and used to establish the public test environment. Final Pages verification and prerelease publication remain conditioned on the unverified checks above. Intake submission does not authorize asset generation; the applicable human gate decisions remain required.
+The public candidate is suitable for controlled pilot use. It is not yet a WCAG conformance claim or a production release because the independent device matrix and third-party accessibility scan remain open. Intake submission does not authorize asset generation; the applicable human gate decisions remain required.
