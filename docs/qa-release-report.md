@@ -31,6 +31,8 @@ This disposition applies to the repository and intake-site candidate. It does no
 | Keyboard execution | PASS | First Tab exposed the skip link; the skip target was corrected to accept programmatic focus. Native controls, visible focus rules, step-heading focus, and error-summary focus were verified. |
 | Live semantic accessibility scan | PASS | Deployed DOM audit found one `main`, navigation, banner, and footer landmark; one H1; ordered visible headings; no duplicate IDs; no unnamed interactive controls; and an English document language. |
 | Generated-file verification | PASS | Deterministic JSON and Markdown examples match the controlled fixture; final review enabled both download actions and produced a copy-ready governed build brief. |
+| Intake-triage automation logic | PASS | Deterministic tests cover label-catalog integrity, Issue parsing, gap and contradiction detection, provisional routing, human-gate sequencing, and authority-boundary language. |
+| Live intake-triage workflow | NOT VERIFIED | Verify label creation, idempotent comment updates, and state transitions on a public test Issue after the workflow reaches `main`. |
 | Responsive design rules | PASS | Desktop, tablet, and mobile breakpoints plus single-column fallbacks are present and validated in source. |
 | GitHub Pages retrieval | PASS | Public intake and system pages retrieved at `https://travis-true.github.io/L-D-OS/`; validation and Pages workflows completed successfully. |
 | Independent mobile/tablet runtime matrix | NOT VERIFIED | The controlled cloud browser did not expose viewport emulation. Repeat the documented viewport matrix on physical devices or an approved browser-testing service. |
