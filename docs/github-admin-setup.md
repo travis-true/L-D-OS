@@ -8,7 +8,8 @@ Use this checklist when a connected tool cannot change repository-level settings
 - Pages source: **GitHub Actions — complete**
 - Public site retrieval: **Complete** at <https://travis-true.github.io/L-D-OS/>
 - Validation and Pages workflows: **Passing**
-- Labels, `main` protection, and the `v0.2.0` prerelease: **Owner action still required**
+- Intake labels: **Automation-managed after the intake-triage workflow reaches `main`**
+- `main` protection and the `v0.2.0` prerelease: **Owner action still required**
 
 ## Repository visibility and Issues
 
@@ -16,7 +17,7 @@ Use this checklist when a connected tool cannot change repository-level settings
 2. Under **Features**, confirm **Issues** is enabled.
 3. Under **Danger Zone → Change repository visibility**, select **Change visibility → Make public** and confirm `travis-true/L-D-OS`.
 
-Repository visibility is complete. Confirm Issues remains enabled before creating the labels below.
+Repository visibility is complete. Confirm Issues remains enabled before running the intake automation.
 
 ## GitHub Pages
 
@@ -27,20 +28,11 @@ Repository visibility is complete. Confirm Issues remains enabled before creatin
 
 ## Labels
 
-Create these labels under **Issues → Labels**:
+The controlled source is `data/github-labels.json`. The **Prepare intake triage** workflow creates missing labels and repairs controlled descriptions or colors when it runs on `main`.
 
-| Label | Suggested color | Purpose |
-| --- | --- | --- |
-| `intake` | `075985` | Guided intake request |
-| `state:submitted` | `0F766E` | Awaiting governed triage |
-| `type:undetermined` | `64748B` | Solution not selected |
-| `type:live-training` | `0369A1` | Facilitated session request |
-| `type:self-paced` | `7C3AED` | Self-paced request |
-| `type:performance-support` | `0E7490` | Job aid or point-of-need request |
-| `type:assessment-evaluation` | `B45309` | Assessment or evaluation request |
-| `type:communication-change` | `BE123C` | Communication or change enablement |
-| `type:blended-program` | `4338CA` | Multi-component program |
-| `change-control` | `9F1239` | Controlled system change |
+Optional: create the repository Actions variable `LDOS_INTAKE_OWNER` under **Settings → Secrets and variables → Actions → Variables**. Set its value to the GitHub username that should receive new intakes. Leave it unset to preserve current assignment.
+
+If automated label creation fails, confirm the workflow has `issues: write` permission and that **Settings → Actions → General → Workflow permissions** allows the repository `GITHUB_TOKEN` to use the permissions declared in the workflow.
 
 ## Protect `main`
 
