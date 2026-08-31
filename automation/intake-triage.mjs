@@ -47,6 +47,11 @@ function cleanSection(value) {
   return value.replace(/^[-*]\s+/gm, "").trim();
 }
 
+function beforeLine(value, pattern) {
+  const match = value.match(pattern);
+  return match ? value.slice(0, match.index).trim() : value;
+}
+
 function isMissing(value) {
   return !value || EMPTY_VALUE.test(cleanSection(value));
 }
@@ -65,13 +70,14 @@ export function parseIntake(body = "") {
     audienceReach: bulletValue(body, "Audience reach"),
     consequenceOfError: bulletValue(body, "Consequence of error"),
     sourceAuthority: bulletValue(sources, "Authority class"),
+    sourceLink: bulletValue(sources, "Link"),
     sourceNotes: bulletValue(sources, "Access/use notes"),
     sourceGaps: cleanSection(sectionValue(body, "Source gaps or conflicts", 3)),
     stakeholders: cleanSection(sectionValue(body, "Stakeholders and reviewers", 3)),
     riskFactors: cleanSection(sectionValue(body, "Risk factors", 3)),
     needBy: bulletValue(body, "Need-by timing"),
     successMeasures: cleanSection(sectionValue(body, "Success measures", 3)),
-    acceptanceCriteria: cleanSection(sectionValue(body, "Acceptance criteria", 3)),
+    acceptanceCriteria: cleanSection(beforeLine(sectionValue(body, "Acceptance criteria", 3), /^- Proposed operational owner:/mi)),
     accessibilityNeeds: cleanSection(sectionValue(body, "Known accessibility or accommodation needs", 3)),
     publicDataConfirmed: /## Public-data acknowledgment[\s\S]*?\bConfirmed\.?/i.test(body)
   };
@@ -93,6 +99,9 @@ export function analyzeIntake(intake) {
   if (isMissing(intake.evidence) && !isMissing(intake.consequence)) warnings.push("The stated consequence remains ungrounded until supporting evidence is provided.");
   if (/^reference$/i.test(intake.sourceAuthority) && /source of truth|governing|authoritative/i.test(intake.sourceNotes)) {
     warnings.push("Source authority is inconsistent: the source is classified as reference but described as authoritative.");
+  }
+  if (/[?&](?:ouid|rtpof|sd|usp=drivesdk)(?:=|&|$)/i.test(intake.sourceLink)) {
+    warnings.push("The source link contains account or sharing parameters; confirm and use the cleanest approved reference URL appropriate for this public repository.");
   }
   if (intake.needBy && !/^\d{4}-\d{2}-\d{2}$/.test(intake.needBy)) warnings.push("Need-by timing should use YYYY-MM-DD when a firm date exists.");
   if (isMissing(intake.accessibilityNeeds)) warnings.push("Accessibility needs are not verified; apply the reusable accessibility baseline and confirm exceptions.");
