@@ -122,7 +122,7 @@ def validate_security_and_accessibility_markers() -> None:
     index = (ROOT / "index.html").read_text(encoding="utf-8")
     app = (ROOT / "assets/js/app.js").read_text(encoding="utf-8")
     css = (ROOT / "assets/css/styles.css").read_text(encoding="utf-8")
-    required_index = ["skip-link", "aria-live", "error-summary", "novalidate", "public-data boundary"]
+    required_index = ["skip-link", "aria-live", "error-summary", "novalidate", "public-data boundary", 'id="main-content" tabindex="-1"']
     for marker in required_index:
         if marker.lower() not in index.lower():
             fail(f"Missing accessibility/privacy marker in index.html: {marker}")
