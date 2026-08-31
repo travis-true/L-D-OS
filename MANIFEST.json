@@ -75,8 +75,8 @@
     },
     {
       "path": "assets/css/styles.css",
-      "size_bytes": 16634,
-      "sha256": "cf3047451bf668ff5d85ab6f8892919337b1a1d4bd06be4eba0d6d8570c70fab"
+      "size_bytes": 16673,
+      "sha256": "518e8bdec4b8cc6fdf3c95afc28e982ac9e075ddc3f9d35d35ff124a071f16ad"
     },
     {
       "path": "assets/images/favicon.svg",
@@ -150,13 +150,13 @@
     },
     {
       "path": "docs/change-record-0.2.0.md",
-      "size_bytes": 3082,
-      "sha256": "158bc77b368fe3d898fb226ef2795b29af0301c99f9012ea217a7c8098a54c4a"
+      "size_bytes": 3557,
+      "sha256": "08d980a55f9846a55aa23a18bbf2269f8927c64abc21ee8df83aef24da585df4"
     },
     {
       "path": "docs/github-admin-setup.md",
-      "size_bytes": 2241,
-      "sha256": "d4371b9535ff2f23a3088e1ad4b5dcb4313832181d057849bc08fb73a4fd871c"
+      "size_bytes": 2687,
+      "sha256": "f1faf509e085bff0aa6e224df3252abadb2fe35c9ba3044490e5170bb37071cd"
     },
     {
       "path": "docs/github-implementation.md",
@@ -175,8 +175,8 @@
     },
     {
       "path": "docs/qa-release-report.md",
-      "size_bytes": 3569,
-      "sha256": "1cbefcf547ea0c714c078a65b4fd6bdf7666d114fc4e674d9c26c337592e445a"
+      "size_bytes": 4741,
+      "sha256": "11af53035af96abedf81be0c4a5adba751bbdf617a921b648f91263f1959cc48"
     },
     {
       "path": "docs/source-integration-report.md",
@@ -210,8 +210,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 4545,
-      "sha256": "9f090d2c502ba0c310b60f2ab1486181fa5c5774471c9ea9d2d4f6a3a17b1a06"
+      "size_bytes": 4559,
+      "sha256": "ac52a28cf8c5ac5ae3cf54ae77605c14089bb7e2b53358f28e9b2bae933caf0c"
     },
     {
       "path": "package.json",
@@ -335,8 +335,8 @@
     },
     {
       "path": "scripts/validate_site.py",
-      "size_bytes": 7175,
-      "sha256": "383e1fb264ebab2105cc86730a6753e094a6f319bd5fcc1685dbeae5bf67629a"
+      "size_bytes": 7210,
+      "sha256": "ce43fe145a291d12ba76578e42571d9adf272b3b2a9d98c7afc95a8893f85ed1"
     },
     {
       "path": "standards/registry.json",
@@ -345,8 +345,8 @@
     },
     {
       "path": "system.html",
-      "size_bytes": 8341,
-      "sha256": "1eeba64d927620625d07f44b2767647e7424c28f1a69246a4f5b62967a7c584a"
+      "size_bytes": 8355,
+      "sha256": "9a7f1075d50cbe3ac3c034dee94f5f42af9fc84a770c718305dc150cb9248be6"
     },
     {
       "path": "tests/fixtures/complete-state.json",
