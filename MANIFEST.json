@@ -29,6 +29,11 @@
       "sha256": "216e8b466e2d979feeea441737ef651bd3e82b72791aef0d3e1f7cc6db412b42"
     },
     {
+      "path": ".github/workflows/intake-triage.yml",
+      "size_bytes": 1860,
+      "sha256": "0e534f693a95fdcc2785a076057105711c1f3c70c55b789e560702d9f134ad23"
+    },
+    {
       "path": ".github/workflows/pages.yml",
       "size_bytes": 1437,
       "sha256": "fddc2be39c68bc020e5b9a7136c13fbf629983e4d42b73d46a934945bfe7a632"
@@ -45,8 +50,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size_bytes": 1609,
-      "sha256": "8785e3c8b58dfa0daa503b8635ca8d7a0961e67e22a2b0830998c74d265c6d46"
+      "size_bytes": 1810,
+      "sha256": "3815553c5712da7ffdcb42f4559f7ec0f6fdf6ae7dd9dd4608139b32a09fdf2f"
     },
     {
       "path": "LICENSE",
@@ -65,8 +70,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 4252,
-      "sha256": "a7d93e25373848520398ce6a07b71e8ded067cef2814a97928e33c6ec4b8bcd6"
+      "size_bytes": 4561,
+      "sha256": "dabe4b9e357d8a6346136f76aa3e65f9a690d4558db876d6d1a6e23b7cef044d"
     },
     {
       "path": "VERSION",
@@ -104,6 +109,11 @@
       "sha256": "87a844ef3182ca1cf5ba5cb5f6be202e4e81b62a55f5704e315e926b55e8604e"
     },
     {
+      "path": "automation/intake-triage.mjs",
+      "size_bytes": 12410,
+      "sha256": "8a3a74021de15ebaeb60829a7bd7ee678a16ca373aba5c1d9d3a442961f92f66"
+    },
+    {
       "path": "checklists/elearning.json",
       "size_bytes": 1626,
       "sha256": "c4365a68b1c659c57d2b5dfbb4d615ade130f6d3a1dd31888ea384652df43b1c"
@@ -122,6 +132,11 @@
       "path": "checklists/vilt.json",
       "size_bytes": 1508,
       "sha256": "ad38193a03afc4f61f7b6e9f79b6a845f8f311769d944ebd67857d5b62d9068f"
+    },
+    {
+      "path": "data/github-labels.json",
+      "size_bytes": 3726,
+      "sha256": "98972845054f61e11ee56276a835c65bc6dff2b0bc044671a32090b0340806fe"
     },
     {
       "path": "data/intake-form.json",
@@ -149,19 +164,24 @@
       "sha256": "03d6481f5678899136aab16b5c5581632347cd1047b809616b05f0db32451f45"
     },
     {
+      "path": "docs/change-record-0.2.0-intake-automation.md",
+      "size_bytes": 2633,
+      "sha256": "a6a7536964cd3f5b2611c222fa61ab78005227cb8d44ff60001dae6a670417f3"
+    },
+    {
       "path": "docs/change-record-0.2.0.md",
       "size_bytes": 3623,
       "sha256": "d2ee851101bb1f47fa81c45dac111a2abd48d005874a985cfd0279e4d4f885a9"
     },
     {
       "path": "docs/github-admin-setup.md",
-      "size_bytes": 2687,
-      "sha256": "f1faf509e085bff0aa6e224df3252abadb2fe35c9ba3044490e5170bb37071cd"
+      "size_bytes": 2704,
+      "sha256": "3db1ee152dd0450138ba81f05f0f551eb2d574c6ee43d3d5564989aedc4443f7"
     },
     {
       "path": "docs/github-implementation.md",
-      "size_bytes": 2319,
-      "sha256": "a94c19dcbbb73c94f5581265fd5d697a9bfbfe1cadf2b46f942e22ebd208cdf2"
+      "size_bytes": 3778,
+      "sha256": "72e290d62a439e8c396214e3abd5aa858be3214cc768b384a387eea52b0afad6"
     },
     {
       "path": "docs/operator-guide.md",
@@ -175,8 +195,8 @@
     },
     {
       "path": "docs/qa-release-report.md",
-      "size_bytes": 4741,
-      "sha256": "11af53035af96abedf81be0c4a5adba751bbdf617a921b648f91263f1959cc48"
+      "size_bytes": 5141,
+      "sha256": "7f3c0f87da165a060d6871122c7caae10facdb8955d0e1aab3e77911005e5cf8"
     },
     {
       "path": "docs/source-integration-report.md",
@@ -274,6 +294,11 @@
       "sha256": "732d746a001149ec64835ee099e6678c47077e7465963a0f7409f4355a48ff36"
     },
     {
+      "path": "schemas/github-label-catalog.schema.json",
+      "size_bytes": 885,
+      "sha256": "d6ece2a6a86b4abfac03e0b156556d8dac28c218c967fb1043ec8e207c6fd2b3"
+    },
+    {
       "path": "schemas/intake-form.schema.json",
       "size_bytes": 1865,
       "sha256": "2404e5329a3d8950f03b7186b0d34f712a9161a3ee294a091dd241118d71cea4"
@@ -345,13 +370,18 @@
     },
     {
       "path": "system.html",
-      "size_bytes": 8372,
-      "sha256": "2c3ce7a6eae96859b92054331f974292e274c7b9e67498071f04a495674dd3dc"
+      "size_bytes": 8566,
+      "sha256": "f70148f55f8cf7de15578be3835f1c83b41585ff4554cbc1b5b9b95f934e05ad"
     },
     {
       "path": "tests/fixtures/complete-state.json",
       "size_bytes": 1892,
       "sha256": "658653302ae2233b00cdfa49378e010629c49f384ac996303ab5748f6512f058"
+    },
+    {
+      "path": "tests/intake-triage.test.mjs",
+      "size_bytes": 4140,
+      "sha256": "80ea97bd7d9c0716865a7abd8bb70c864f34250f68b94f96ac3ae2d5ea142393"
     },
     {
       "path": "tests/intake.test.mjs",
