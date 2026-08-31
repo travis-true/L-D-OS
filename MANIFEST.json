@@ -110,8 +110,8 @@
     },
     {
       "path": "automation/intake-triage.mjs",
-      "size_bytes": 12410,
-      "sha256": "8a3a74021de15ebaeb60829a7bd7ee678a16ca373aba5c1d9d3a442961f92f66"
+      "size_bytes": 12898,
+      "sha256": "9462adceab4850fecb8def21e10189bddfaf26e3ded7d521b0ca62b02e012e37"
     },
     {
       "path": "checklists/elearning.json",
@@ -165,8 +165,8 @@
     },
     {
       "path": "docs/change-record-0.2.0-intake-automation.md",
-      "size_bytes": 2633,
-      "sha256": "a6a7536964cd3f5b2611c222fa61ab78005227cb8d44ff60001dae6a670417f3"
+      "size_bytes": 3059,
+      "sha256": "a6ab75de639225e765ea3fc3fbc4af6d7f38b79a0c6779cab56369d6b26e98cc"
     },
     {
       "path": "docs/change-record-0.2.0.md",
@@ -175,8 +175,8 @@
     },
     {
       "path": "docs/github-admin-setup.md",
-      "size_bytes": 2704,
-      "sha256": "3db1ee152dd0450138ba81f05f0f551eb2d574c6ee43d3d5564989aedc4443f7"
+      "size_bytes": 2699,
+      "sha256": "f4a5b5136ff1dfee57a18170792a8ce81eddfbd4ca3a81751152b2e488d8d441"
     },
     {
       "path": "docs/github-implementation.md",
@@ -195,8 +195,8 @@
     },
     {
       "path": "docs/qa-release-report.md",
-      "size_bytes": 5141,
-      "sha256": "7f3c0f87da165a060d6871122c7caae10facdb8955d0e1aab3e77911005e5cf8"
+      "size_bytes": 5260,
+      "sha256": "dd0cc682865fb9c28d254d4a20c42120b39431de925e790ca847210f0b14d061"
     },
     {
       "path": "docs/source-integration-report.md",
@@ -380,8 +380,8 @@
     },
     {
       "path": "tests/intake-triage.test.mjs",
-      "size_bytes": 4140,
-      "sha256": "80ea97bd7d9c0716865a7abd8bb70c864f34250f68b94f96ac3ae2d5ea142393"
+      "size_bytes": 4364,
+      "sha256": "a75c025a19de242538e7ba05b916e4933a3e775ff007de99d4e705946723bf9a"
     },
     {
       "path": "tests/intake.test.mjs",
